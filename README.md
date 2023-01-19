@@ -1,2 +1,2 @@
 # studying.js
-Monorepo de estudos para javascript, typescript, react, node, etc.
+Monorepo de estudos para o ecossistema javascript, typescript, react, node, etc.

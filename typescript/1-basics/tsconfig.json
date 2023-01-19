@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    // * Latest ECMAScript features
+    "target": "esnext",
+    // * Generate .js files automatically
+    "watch": true,
+    "lib": ["dom", "es2017"]
+  }
+}
