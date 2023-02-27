@@ -1,38 +1,47 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center">
+  <img alt="Logo" src="./public/images/logo.svg" alt="ig.News">
+</h1>
 
-## Getting Started
+<h1 align="center">
+    ig.News - Next.js
+</h1>
+<p align="center">Aplicação para inscrição de newsletter com pagamento via stripe</p>
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+<p align="center">
+ <a href="#sobre-o-projeto">Sobre o Projeto</a> •
+ <a href="#tecnologias">Tecnologias</a> •
+ <a href="#configurações-necessárias">Configurações necessárias</a> •
+ <a href="#licença">Licença</a> •
+ <a href="#autor">Autor</a>
+</p>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Sobre o Projeto
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+O projeto **ig.News** é uma aplicação para inscrição de newsletter com pagamento via stripe.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## Tecnologias
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+As seguintes ferramentas foram usadas na construção do projeto:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- [Next.js](https://nextjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Sass](https://sass-lang.com/)
+- [FaunaDB](https://fauna.com/)
+- [Prismic](https://prismic.io/)
+- [Stripe](https://stripe.com/br)
+## Configurações necessárias
 
-## Learn More
+### **Requisitos**
 
-To learn more about Next.js, take a look at the following resources:
+Necessário realizar as instalações:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [Git](https://git-scm.com/)
+- [Yarn](https://classic.yarnpkg.com)
+- [Stripe CLI](https://stripe.com/docs/stripe-cli)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Criar conta e configurar os serviços externos:
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [Stripe](https://stripe.com/)
+- [FaunaDB](https://fauna.com/)
+- [Prismic CMS](https://prismic.io/)
