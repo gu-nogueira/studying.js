@@ -7,6 +7,11 @@ import { SubscribeButton } from '@/components/SubscribeButton';
 import { stripe } from '@/services/stripe';
 import styles from '@/styles/home.module.scss';
 
+// 3 ways to populate a page with data:
+// 1. Client-side <dynamic no indexed data> (JS)
+// 2. Server-side <dynamic data> (Node)
+// 3. Static Site Generation <static generic data> (SSG)
+
 interface HomeProps {
   product: {
     priceId: string;
@@ -15,6 +20,7 @@ interface HomeProps {
 }
 
 export default function Home({ product }: HomeProps) {
+
   return (
     <>
       <Head>
@@ -48,7 +54,7 @@ export default function Home({ product }: HomeProps) {
   );
 }
 
-export const getStataticProps: GetStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const price = await stripe.prices.retrieve('price_1McSeLI3UlqWg0mQObIeCdma', {
     // expand is used to include the product object in the response
     expand: ['product'],
@@ -59,12 +65,13 @@ export const getStataticProps: GetStaticProps = async () => {
     amount: new Intl.NumberFormat('en-US', {
       style: 'currency',
       currency: 'USD',
-    }).format(price.unit_amount ?? 0 / 100),
+    }).format(price.unit_amount / 100),
   };
 
   return {
     props: {
       product,
     },
+    revalidate: 60 * 60 * 24, // 24 hours
   };
 };
