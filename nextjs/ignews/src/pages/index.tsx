@@ -12,6 +12,11 @@ import styles from '@/styles/home.module.scss';
 // 2. Server-side <dynamic data> (Node)
 // 3. Static Site Generation <static generic data> (SSG)
 
+// Example of a blog:
+// 1. Client-side: the blog posts are dynamic and are not indexed by search engines
+// 2. Server-side: the blog posts are dynamic and are indexed by search engines (ex: user data)
+// 3. Static Site Generation: the blog posts are static and are indexed by search engines (post content)
+
 interface HomeProps {
   product: {
     priceId: string;
@@ -20,7 +25,6 @@ interface HomeProps {
 }
 
 export default function Home({ product }: HomeProps) {
-
   return (
     <>
       <Head>
