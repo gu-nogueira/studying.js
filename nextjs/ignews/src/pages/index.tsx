@@ -9,13 +9,12 @@ import styles from '@/styles/home.module.scss';
 
 // 3 ways to populate a page with data:
 // 1. Client-side <dynamic no indexed data> (JS)
-// 2. Server-side <dynamic data> (Node)
+// 2. Server-side <dynamic data> (Node | SSR)
 // 3. Static Site Generation <static generic data> (SSG)
 
-// Example of a blog:
-// 1. Client-side: the blog posts are dynamic and are not indexed by search engines
-// 2. Server-side: the blog posts are dynamic and are indexed by search engines (ex: user data)
-// 3. Static Site Generation: the blog posts are static and are indexed by search engines (post content)
+// Example of SSG
+// Blog post: static content (title, content, author, etc), can be used with SSG
+// Comments: dynamic content (user, comment, etc), can be used in client-side (useEffect, useQuery, etc...)
 
 interface HomeProps {
   product: {
