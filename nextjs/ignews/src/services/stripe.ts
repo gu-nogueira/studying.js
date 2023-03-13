@@ -1,8 +1,11 @@
 import Stripe from 'stripe';
 
+// ** Utils
+import requiredEnv from '@/utils/requiredEnv';
+
 import projectPackage from '../../package.json';
 
-const apiKey: string = process.env.STRIPE_API_KEY;
+const apiKey: string = requiredEnv('STRIPE_API_KEY');
 
 if (!apiKey) throw new Error('Stripe API key not found.');
 
