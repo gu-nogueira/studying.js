@@ -48,7 +48,6 @@ export const authOptions = {
         );
         return true;
       } catch (error) {
-        console.error('is getting here: ', error);
         return false;
       }
     },
