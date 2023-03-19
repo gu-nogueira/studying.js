@@ -1,4 +1,3 @@
-// Optional envOptions
 interface EnvOptions {
   public?: boolean;
 }
