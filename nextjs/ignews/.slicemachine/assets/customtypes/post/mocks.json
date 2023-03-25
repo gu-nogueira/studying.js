@@ -1,0 +1,22 @@
+{
+  "uid": {
+    "__TYPE__": "UIDContent",
+    "value": "blew"
+  },
+  "title": {
+    "__TYPE__": "FieldContent",
+    "value": "also",
+    "type": "Text"
+  },
+  "content": {
+    "__TYPE__": "StructuredTextContent",
+    "value": [
+      {
+        "type": "paragraph",
+        "content": {
+          "text": "Duis aliqua sunt dolor nostrud dolore. Mollit duis aliqua nostrud aliquip. Aliqua sit ad incididunt pariatur incididunt aute culpa ea mollit non aliqua adipisicing ea qui dolore."
+        }
+      }
+    ]
+  }
+}
