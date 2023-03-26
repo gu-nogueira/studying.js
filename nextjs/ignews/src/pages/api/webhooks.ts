@@ -3,7 +3,7 @@ import { Readable } from 'stream';
 import Stripe from 'stripe';
 
 // ** Services
-import { stripe } from '@/services/stripe';
+import { stripe } from '@/pages/services/stripe';
 import requiredEnv from '@/utils/requiredEnv';
 import { saveSubscription } from './_lib/manageSubscription';
 import requiredFields from '@/utils/requiredFields';

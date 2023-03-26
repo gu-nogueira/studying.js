@@ -3,7 +3,7 @@ import GithubProvider from 'next-auth/providers/github';
 import { query as q } from 'faunadb';
 
 // ** Services
-import { fauna } from '@/services/fauna';
+import { fauna } from '@/pages/services/fauna';
 
 // ** Helpers
 import requiredEnv from '@/utils/requiredEnv';

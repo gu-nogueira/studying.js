@@ -3,8 +3,8 @@ import { getServerSession } from 'next-auth/next';
 import { query as q } from 'faunadb';
 
 // ** Services
-import { stripe } from '@/services/stripe';
-import { fauna } from '@/services/fauna';
+import { stripe } from '@/pages/services/stripe';
+import { fauna } from '@/pages/services/fauna';
 
 // ** Utils
 import requiredEnv from '@/utils/requiredEnv';
