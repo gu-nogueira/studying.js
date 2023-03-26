@@ -3,7 +3,7 @@ import Stripe from 'stripe';
 // ** Utils
 import requiredEnv from '@/utils/requiredEnv';
 
-import projectPackage from '../../../package.json';
+import projectPackage from '../../package.json';
 
 const apiKey = requiredEnv('STRIPE_API_KEY');
 

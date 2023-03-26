@@ -3,10 +3,9 @@ import { Readable } from 'stream';
 import Stripe from 'stripe';
 
 // ** Services
-import { stripe } from '@/pages/services/stripe';
+import { stripe } from '@/services/stripe';
 import requiredEnv from '@/utils/requiredEnv';
 import { saveSubscription } from './_lib/manageSubscription';
-import requiredFields from '@/utils/requiredFields';
 
 async function buffer(readable: Readable) {
   const chunks = [];
@@ -82,8 +81,8 @@ export default async function Handler(
         case 'checkout.session.completed':
           const checkoutSession = event.data.object as Stripe.Checkout.Session;
           await saveSubscription(
-            checkoutSession.subscription?.toString(),
-            checkoutSession.customer?.toString(),
+            checkoutSession.subscription?.toString() as string,
+            checkoutSession.customer?.toString() as string,
             { createAction: true }
           );
           break;

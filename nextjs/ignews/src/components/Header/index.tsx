@@ -14,7 +14,7 @@ const routes = [
   {
     path: '/posts',
     name: 'Posts',
-    prefetch: true,
+    prefetch: false,
   },
 ];
 
@@ -33,7 +33,7 @@ export function Header() {
               key={route.path}
               href={route.path}
               className={asPath === route.path ? styles.active : ''}
-              prefetch={route?.prefetch}
+              {...(route.prefetch === false ? { prefetch: false } : {})}
             >
               {route.name}
             </Link>

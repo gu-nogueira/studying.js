@@ -3,9 +3,10 @@ import Head from 'next/head';
 import Link from 'next/link';
 
 // ** Services
-import { createClient } from '@/pages/services/prismic';
+import { createClient } from '@/services/prismic';
 
 import styles from './styles.module.scss';
+import { RTTextNode } from '@prismicio/types';
 
 type Post = {
   slug: string;
@@ -38,7 +39,7 @@ export default function Posts({ posts }: PostsProps) {
   );
 }
 
-export const getStaticProps: GetStaticProps = async ({ req, previewData }) => {
+export const getStaticProps: GetStaticProps = async ({ previewData }) => {
   const prismic = createClient();
 
   const response = await prismic.getAllByType('post', {
@@ -49,9 +50,10 @@ export const getStaticProps: GetStaticProps = async ({ req, previewData }) => {
   // ** A good practice about static site generation is to format all the data if possible in the server side. This improves SEO and performance, because the browser will not have to format the data.
 
   const posts = response.map((post) => {
-    const rawExcerpt =
-      post.data.content.find((content) => content.type === 'paragraph')?.text ||
-      '';
+    const firstParagraph = post.data.content.find(
+      (content) => content.type === 'paragraph'
+    ) as RTTextNode;
+    const rawExcerpt = firstParagraph?.text ? firstParagraph.text : '';
     const trimmedExcerpt = rawExcerpt.split(' ').slice(0, 24).join(' ') + '...';
 
     return {

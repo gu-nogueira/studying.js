@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 import { SubscribeButton } from '@/components/SubscribeButton';
 
-import { stripe } from '@/pages/services/stripe';
+import { stripe } from '@/services/stripe';
 import styles from '@/styles/home.module.scss';
 
 // 3 ways to populate a page with data:

@@ -6,7 +6,7 @@ import { PrismicProvider } from '@prismicio/react';
 import { PrismicPreview } from '@prismicio/next';
 
 // ** Services
-import { repositoryName } from '@/pages/services/prismic';
+import { repositoryName } from '@/services/prismic';
 
 // ** Components
 import { Header } from '@/components/Header';

@@ -2,10 +2,13 @@ import { GetServerSideProps } from 'next';
 import { getServerSession } from 'next-auth';
 import { useRouter } from 'next/router';
 
+// ** Options
+import { authOptions } from '../api/auth/[...nextauth]';
+
 import * as prismicH from '@prismicio/helpers';
 
 // ** Services
-import { createClient } from '@/pages/services/prismic';
+import { createClient } from '@/services/prismic';
 
 import Head from 'next/head';
 
@@ -51,23 +54,25 @@ export default function Post({ post }: PostProps) {
 
 export const getServerSideProps: GetServerSideProps = async ({
   req,
+  res,
   params,
 }) => {
-  // const session = await getServerSession(req);
-  const { slug } = params;
+  const { slug } = params!;
+
+  const session = await getServerSession(req, res, authOptions);
 
   // ** We can use this to redirect to home page if user is not authenticated
 
-  // if (!session?.activeSubscription) {
-  //   return {
-  //     redirect: {
-  //       destination: '/',
-  //       permanent: false,
-  //     },
-  //   };
-  // }
+  if (!session?.activeSubscription) {
+    return {
+      redirect: {
+        destination: '/',
+        permanent: false,
+      },
+    };
+  }
 
-  const prismic = createClient(req);
+  const prismic = createClient();
 
   const response = await prismic.getByUID('post', String(slug), {});
 
