@@ -7,6 +7,7 @@ import { getStripeJs } from '@/services/stripe-js';
 
 // ** Styles
 import styles from './styles.module.scss';
+import { GetServerSideProps } from 'next';
 
 export function SubscribeButton() {
   const { data: session } = useSession();
